@@ -5,7 +5,12 @@
   "main": "dist/comsemrel.js",
   "bin": "bin/comsemrel.js",
   "scripts": {
-    "test": "jest"
+    "lint": "tslint src/**/*.ts",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "coverage": "codecov",
+    "precommit": "npm test",
+    "commitmsg": "commitplease .git/COMMIT_EDITMSG"
   },
   "repository": {
     "type": "git",
@@ -27,5 +32,49 @@
   "files": [
     "bin/",
     "dist/"
-  ]
+  ],
+  "commitplease": {
+    "nohook": true,
+    "style": "angular",
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "build",
+      "ci",
+      "chore",
+      "revert"
+    ],
+    "scope": "\\S+.*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+  },
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "commitplease": "^2.7.9",
+    "cz-conventional-changelog": "^2.0.0",
+    "husky": "^0.13.2",
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.0",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1"
+  }
 }
