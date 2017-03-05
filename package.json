@@ -65,7 +65,7 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+    "testRegex": "/tests/.*\\.(ts|tsx|js)$"
   },
   "devDependencies": {
     "codecov": "^1.0.1",
