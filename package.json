@@ -10,7 +10,12 @@
     "test": "jest",
     "coverage": "codecov",
     "precommit": "npm test",
-    "commitmsg": "commitplease .git/COMMIT_EDITMSG"
+    "commitmsg": "commitplease .git/COMMIT_EDITMSG",
+    "prebuild": "npm run test",
+    "build": "tsc",
+    "preversion": "npm run build && git add -f dist/",
+    "postversion": "git rm -r --cached dist/ && git commit -m \"chore(dist): clean after release [ci skip]\" && git push origin && git push origin --tags",
+    "prepublish": "in-publish && npm run build || exit 0"
   },
   "repository": {
     "type": "git",
