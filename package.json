@@ -1,0 +1,31 @@
+{
+  "name": "comsemrel",
+  "version": "0.0.0",
+  "description": "Tool for automating software releases",
+  "main": "dist/comsemrel.js",
+  "bin": "bin/comsemrel.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ComSemRel/comsemrel.git"
+  },
+  "keywords": [
+    "comsemrel",
+    "release",
+    "automatic-release",
+    "semantic-release",
+    "semver"
+  ],
+  "author": "Comandeer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ComSemRel/comsemrel/issues"
+  },
+  "homepage": "https://github.com/ComSemRel/comsemrel#readme",
+  "files": [
+    "bin/",
+    "dist/"
+  ]
+}
