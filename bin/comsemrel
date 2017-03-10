@@ -1,2 +1,5 @@
+#!/usr/bin/env node
 /*! comsemrel | (c) 2017 Comandeer | MIT license (see LICENSE) */
+'use strict';
+
 const comsemrel = require( '../dist/comsemrel' );
