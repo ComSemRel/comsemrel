@@ -12,7 +12,7 @@
     "precommit": "npm test",
     "commitmsg": "commitplease .git/COMMIT_EDITMSG",
     "prebuild": "npm run test",
-    "build": "tsc",
+    "build": "rollup -c",
     "preversion": "npm run build && git add -f dist/",
     "postversion": "git rm -r --cached dist/ && git commit -m \"chore(dist): clean after release [ci skip]\" && git push origin && git push origin --tags",
     "prepublish": "in-publish && npm run build || exit 0"
@@ -78,6 +78,8 @@
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.2",
     "jest": "^19.0.2",
+    "rollup": "^0.41.5",
+    "rollup-plugin-typescript": "^0.8.1",
     "ts-jest": "^19.0.0",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1"
