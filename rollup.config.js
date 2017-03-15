@@ -4,7 +4,7 @@ const packageInfo = require( './package.json' );
 
 export default {
 	entry: 'src/comsemrel.ts',
-	format: 'es',
+	format: 'cjs',
 	sourceMap: true,
 	dest: `dist/${packageInfo.name}.js`,
 
