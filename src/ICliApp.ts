@@ -1,5 +1,5 @@
-import ICommand from './ICommand';
-import IRenderer from './IRenderer';
+import { ICommand } from '@comsemrel/interfaces';
+import { IRenderer } from '@comsemrel/interfaces';
 
 interface ICliApp {
 }

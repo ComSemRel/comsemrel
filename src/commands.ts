@@ -1,4 +1,4 @@
-import ICommand from './ICommand';
+import { ICommand } from '@comsemrel/interfaces';
 
 const commands = new Set<ICommand>();
 
