@@ -1,8 +1,8 @@
+import { ICommand } from '@comsemrel/interfaces';
+import { IRenderer } from '@comsemrel/interfaces';
 import CliApp from './CliApp';
 import ICliApp from './ICliApp';
 import ICliAppConstructor from './ICliAppConstructor';
-import ICommand from './ICommand';
-import IRenderer from './IRenderer';
 
 function creator( constructor: ICliAppConstructor, commands: Set<ICommand>, renderer: IRenderer ): ICliApp {
 	return new constructor( commands, renderer );
