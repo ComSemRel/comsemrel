@@ -73,16 +73,16 @@
     "testRegex": "/tests/.*\\.(ts|tsx|js)$"
   },
   "devDependencies": {
-    "codecov": "^1.0.1",
+    "codecov": "^2.1.0",
     "commitplease": "^2.7.9",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.2",
     "in-publish": "^2.0.0",
-    "jest": "^19.0.2",
+    "jest": "^20.0.0",
     "rollup": "^0.41.5",
     "rollup-plugin-typescript": "^0.8.1",
-    "ts-jest": "^19.0.0",
-    "tslint": "^4.5.1",
+    "ts-jest": "^20.0.0",
+    "tslint": "^5.2.0",
     "typescript": "^2.2.1"
   }
 }
