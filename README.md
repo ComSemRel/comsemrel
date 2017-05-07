@@ -1,5 +1,7 @@
 # ComSemRel
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ComSemRel/comsemrel.svg)](https://greenkeeper.io/)
+
 ![](assets/logo.png)
 
 
