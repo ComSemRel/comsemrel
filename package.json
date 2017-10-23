@@ -73,7 +73,7 @@
     "testRegex": "/tests/.*\\.(ts|tsx|js)$"
   },
   "devDependencies": {
-    "codecov": "^2.1.0",
+    "codecov": "^3.0.0",
     "commitplease": "^3.1.0",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.0",
