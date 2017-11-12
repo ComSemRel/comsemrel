@@ -3,19 +3,19 @@
   "version": "0.0.0",
   "description": "Tool for automating software releases",
   "main": "dist/comsemrel.js",
+  "jsnext:main": "dist/comsemrel.es2015.js",
+  "module": "dist/comsemrel.es2015.js",
   "bin": "bin/comsemrel.js",
   "scripts": {
-    "lint": "tslint src/**/*.ts",
+    "prebuild": "rimraf dist",
+    "build": "rlb",
+    "lint": "eslint src/**/*.js tests/*.js",
     "pretest": "npm run lint",
-    "test": "jest",
-    "coverage": "codecov",
-    "precommit": "npm test",
+    "test": "nyc mocha tests/*.js --timeout 15000 --require babel-register",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "commitmsg": "commitplease .git/COMMIT_EDITMSG",
-    "prebuild": "npm run test",
-    "build": "rollup -c",
-    "preversion": "npm run build && git add -f dist/",
-    "postversion": "git rm -r --cached dist/ && git commit -m \"chore(dist): clean after release [ci skip]\" && git push origin && git push origin --tags",
-    "prepublish": "in-publish && npm run build || exit 0"
+    "preversion": "npm run test && npm run build && git add -f dist/",
+    "postversion": "git rm -r --cached dist/ && git commit -m \"chore(dist): clean after release [ci skip]\" && git push origin && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -61,28 +61,18 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "/tests/.*\\.(ts|tsx|js)$"
-  },
   "devDependencies": {
+    "@comandeer/rollup-lib-bundler": "^0.3.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
     "codecov": "^3.0.0",
     "commitplease": "^3.1.0",
     "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.11.0",
     "husky": "^0.14.0",
-    "in-publish": "^2.0.0",
-    "jest": "^21.2.1",
-    "rollup": "^0.41.5",
-    "rollup-plugin-typescript": "^0.8.1",
-    "ts-jest": "^20.0.0",
-    "tslint": "^5.2.0",
-    "typescript": "^2.2.1"
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "rimraf": "^2.6.2"
   }
 }
